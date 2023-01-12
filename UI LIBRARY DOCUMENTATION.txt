@@ -1,0 +1,190 @@
+THIS IS A SMALL SIMPLE DOCUMENTATION ON HOW THIS LIBRARY RUNS.
+
+------------------------------------------------------------------
+
+|	__CREATELIB__(nameLib (String), AnimStyle (#), TpPlayer (true/false) )	|
+
+Runs the library and names it. TpPlayer creates a button that allows you to teleport to all players in game. (DOES NOT WORK IN ALL GAMES) toggleable.
+
+EXAMPLE:
+
+|	__CREATELIB__("MyCoolScriptName", 1, true)	|
+
+------------------------------------------------------------------
+
+|	_INITIALIZEUI()		|
+
+Run event at the very end of your WHOLE SCRIPT. This is what allows you to see your ui.
+
+------------------------------------------------------------------
+
+|	CreatePanelButton(nameB, OrderNum)	|
+
+Creates a panel button and returns it. This is what allows you to add buttons to run your scripts.
+
+--nameB--
+the name/text of the button
+
+--OrderNum--
+The ordering of which the buttons are. (0-inf, lowest to highest)
+
+EXAMPLE:
+
+|	CreatePanelButton("Farming", 2)	|
+
+-----------------------------------------------------------------
+
+|	CreateButton(nameB, OrderNum, Keypress, Function)	|
+
+Creates a button and returns it. This is what you use to add your own custom scripts.
+
+--nameB--
+the name/text of the button
+
+--OrderNum--
+The ordering of which the buttons are. (0-inf, lowest to highest)
+
+--KeyPress--
+//UNFINISHED\\
+Allows the option to enable keybinds to the buttons, leave empty if you want to disable this feature.
+Stored in a string state.
+Example: "z", "Z", "Space", "LeftAlt", "RightShift"
+OPTIONAL VALUE
+
+--Function--
+//UNFINISHED\\
+Stored as a string.
+Can be a nil value
+OPTIONAL VALUE
+
+Example of button:
+
+|	CreateButton("Fly Script", 2, nil, nil)	|
+|	CreateButton("A really nice button", 11, "A", "MyBeautifulFunction")	|
+
+---------------------------------------------------------------
+
+|	CreateLabel(nameB, OrderNum)	|
+
+Creates a Label button and returns it. 
+
+--nameB--
+the name/text of the button
+
+--OrderNum--
+The ordering of which the buttons are. (0-inf, lowest to highest)
+
+EXAMPLE:
+
+|	CreatePanelButton("Outside Building", 2)	|
+
+---------------------------------------------------------------
+
+|	CreateAlert(nameB, OrderNum, Duration, Loudness)	|
+
+Creates an alert with optional sound that only lasts for the duration you set it to.
+
+--nameB (String)--
+the name/text of the button
+
+--OrderNum (Int Number)--
+The ordering of which the buttons are. (0-inf, lowest to highest)
+
+--Duration (Number)--
+Will only show alert for the duration.
+Duration is counted in seconds.
+
+--Loudness (Number)--
+
+The volume for alert sound effect. (Can be 0)
+Must be a number. can not be left empty
+
+EXAMPLE:
+
+
+|	CreateAlert("Warning: Players can see you", 0, 3.152, 0.257)	|
+|	CreateAlert("Priority Alert: Script is running", 12, 5, 2)	|
+
+--------------------------------------------------------------
+
+///////////////////////IMPORTANT\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+IF YOU WANT TO ADD YOUR SCRIPT TO A NORMAL BUTTON, YOU MUST ADD A EVENT TO THE END OF THE BUTTONS
+
+EXAMPLE BELOW:
+
+CreateButton(v.DisplayName .. " (".. v.Name .. ").", 2, "").MouseButton1Click:Connect(function()
+	--Insert code here
+end)
+
+
+CreateButton(v.DisplayName .. " (".. v.Name .. ").", 2, "").MouseButton2Click:Connect(MyCustomFunction()) -- Calls a function named "MyCustomFunction"
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+TO CREATE PANEL BUTTONS WITH ITEMS IN THEM, YOU MUST INSERT ALL ITEMS INSIDE THE FUNCTION.
+TO CLEAR ALL OTHER EXISTING ITEMS FROM SELECTION BOX, YOU MUST RUN THE FUNCTIONS "_ClearCanvas()" AT THE START OF FUNCTION
+AT THE LAST LINE OF THE FUNCTION, YOU MUST CALL "_ORGANIZEUI()" TO ORDER YOUR UI BY THE "OrderNum"
+
+EXAMPLE FROM SCRIPT:
+
+
+CreatePanelButton("Teleport To Players", 999, "").MouseButton1Click:Connect(function() -- Can also call in a function stored somewhere else
+
+	_ClearCanvas() -- RUN AT FIRST LINE OF FUNCTION
+			
+	for i, v in pairs(game.Players:GetChildren()) do
+		local player = game.Players.LocalPlayer
+		if not v:IsA("Humanoid") then
+						
+			if player.UserId == v.UserId then
+
+			else
+						
+				CreateButton(v.DisplayName .. " (".. v.Name .. ").", 2, "").MouseButton1Click:Connect(function()
+					player.Character.HumanoidRootPart.CFrame = workspace:FindFirstChild(v.Name).HumanoidRootPart.CFrame
+					CreateAlert("Teleported to: " .. v.DisplayName.. ", ".. v.Name, 1, 1.5, 1)
+				end)
+			end
+		end
+	end
+
+	_ORGANIZEUI() -- RUN BEFORE CLOSING FUNCTION
+
+end)
+
+
+EXAMPLE FROM A CUSTOM SCRIPT:
+
+
+CreatePanelButton("Farming", 1).MouseButton1Click:Connect(function()
+	_ClearCanvas()
+
+	CreateButton("Safe Spot Farming", 2).MouseButton1Click:Connect(function()
+		if AutoFarm then
+			AutoFarm = false -- global variable that checks to see if I should autofarm.
+			CreateAlert("AutoFarm Off", 1, 1, 1)
+		else
+			AutoFarm = true
+			CreateAlert("AutoFarm On", 1, 1, 1) -- creates alert to notify LocalPlayer
+		end
+	end)
+
+	_ORGANIZEUI()
+end)
+
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+DOCUMENTATION WILL BE UPDATED MORE.
+This is all for now. If you need any more help, contact me on discord! DigitalDemon#1099
+
+Code is open for anyone to download and edit, No need to add credits. (Although it would be nice)
+Code will also be updated more, always check the version to see if anything new is added!
+
+
+DOCUMENTATION VERSION: 1.0.0
+DOCUMENTATION CREATED: 2023-01-12
+DOCUMENTATION LAST EDITED: 2023-01-12
