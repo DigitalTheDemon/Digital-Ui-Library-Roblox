@@ -22,7 +22,7 @@ function __CREATELIB__(nameLib, AnimStyle, TpPlayer)
 	------------------------------------------------------
 
 	local MainScreen = Instance.new("ScreenGui", game.CoreGui)
-	MainScreen.Name = nameLib
+	MainScreen.Name = "ExploitGuiMenu"
 
 	local Main = Instance.new("Frame", MainScreen)
 	Main.Name = nameLib
