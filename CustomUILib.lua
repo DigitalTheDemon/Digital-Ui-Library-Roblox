@@ -355,5 +355,5 @@ function __CREATELIB__(nameLib, AnimStyle, TpPlayer)
 	Players.PlayerAdded:Connect(onPlayerAdded)
 	--function GetAndRunFunction(FUNCTION)
 
-	_INITIALIZEUI() -- AT THE END OF UI. DOES NOT NEED TO BE AT THE END OF ALL SCRIPTS
+	--_INITIALIZEUI() -- AT THE END OF UI. DOES NOT NEED TO BE AT THE END OF ALL SCRIPTS
 end
