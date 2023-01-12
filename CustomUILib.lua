@@ -25,7 +25,7 @@ function __CREATELIB__(nameLib, AnimStyle, TpPlayer)
 	MainScreen.Name = nameLib
 
 	local Main = Instance.new("Frame", MainScreen)
-	Main.Name = "Flood Escape 2 Script"
+	Main.Name = nameLib
 	Main.Size = UDim2.new(0.001, 0, 0.001, 0)
 	Main.BackgroundColor3 = Color3.fromRGB(54, 23, 23)
 	Main.Position = UDim2.new(0.01, 0, 0.763, 0)
