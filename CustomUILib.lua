@@ -356,7 +356,7 @@ function __CREATELIB__(nameLib, AnimStyle, TpPlayer)
 	Players.PlayerAdded:Connect(onPlayerAdded)
 	--function GetAndRunFunction(FUNCTION)
 		
-	CreateAlert("Current Version Running: " .. VERSION, 99999, 3, 0)
+	--CreateAlert("Current Version Running: " .. VERSION, 99999, 3, 0)
 		
 	--_INITIALIZEUI() -- AT THE END OF UI. DOES NOT NEED TO BE AT THE END OF ALL SCRIPTS
 end
