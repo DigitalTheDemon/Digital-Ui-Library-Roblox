@@ -19,6 +19,7 @@ function __CREATELIB__(nameLib, AnimStyle, TpPlayer)
 	local Players = game:GetService("Players")
 	local AutoFarm = false
 	local _VISIBLE = true
+	local VERSION = 1.0.1
 	------------------------------------------------------
 
 	local MainScreen = Instance.new("ScreenGui", game.CoreGui)
@@ -354,6 +355,8 @@ function __CREATELIB__(nameLib, AnimStyle, TpPlayer)
 
 	Players.PlayerAdded:Connect(onPlayerAdded)
 	--function GetAndRunFunction(FUNCTION)
-
+		
+	CreateAlert("Current Version Running: " .. VERSION, 99999, 3, 0)
+		
 	--_INITIALIZEUI() -- AT THE END OF UI. DOES NOT NEED TO BE AT THE END OF ALL SCRIPTS
 end
