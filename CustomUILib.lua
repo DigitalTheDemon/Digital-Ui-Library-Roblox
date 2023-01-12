@@ -34,7 +34,7 @@ function __CREATELIB__(nameLib, AnimStyle, TpPlayer)
 	local ScriptLabelMain = Instance.new("TextLabel", Main)
 	ScriptLabelMain.Size = UDim2.new(0.9, 0, 0.177, 0)
 	ScriptLabelMain.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-	ScriptLabelMain.Text = "Flood Escape 2 Script"
+	ScriptLabelMain.Text = nameLib
 	ScriptLabelMain.TextScaled = true
 	ScriptLabelMain.Name = "TopBar"
 	ScriptLabelMain.TextSize = 19
