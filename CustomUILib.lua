@@ -19,7 +19,7 @@ function __CREATELIB__(nameLib, AnimStyle, TpPlayer)
 	local Players = game:GetService("Players")
 	local AutoFarm = false
 	local _VISIBLE = true
-	local VERSION = 1.0.1
+	local VERSION = "1.0.1"
 	------------------------------------------------------
 
 	local MainScreen = Instance.new("ScreenGui", game.CoreGui)
