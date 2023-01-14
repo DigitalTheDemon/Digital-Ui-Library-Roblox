@@ -1,5 +1,8 @@
+VERSION = "1.2.1"
+CreditInfo = "Person Has not given any information."
 
-function __CREATELIB__(nameLib, AnimStyle, TpPlayer)
+
+function __CREATELIB__(nameLib, AnimStyle, TpPlayerButton)
 
 	if game.CoreGui:FindFirstChild("ExploitGuiMenu") ~= nil then
 
@@ -19,7 +22,7 @@ function __CREATELIB__(nameLib, AnimStyle, TpPlayer)
 	local Players = game:GetService("Players")
 	local AutoFarm = false
 	local _VISIBLE = true
-	local VERSION = "1.0.1"
+	
 	------------------------------------------------------
 
 	local MainScreen = Instance.new("ScreenGui", game.CoreGui)
@@ -188,6 +191,30 @@ function __CREATELIB__(nameLib, AnimStyle, TpPlayer)
 
 	end
 
+	function CreateTextBox(nameB, OrderNum, UniqueIdentifier)
+		
+		local CreateTextBoxThing = Instance.new("TextBox", SideSelectionPanelMain)
+		CreateTextBoxThing.Size = UDim2.new(0.88, 0, 0.165, 0)
+		CreateTextBoxThing.Position = UDim2.new(0.062, 0, 0, 0)
+		CreateTextBoxThing.BackgroundColor3 = Color3.fromRGB(108, 37, 37)
+		CreateTextBoxThing.Text = nameB
+		CreateTextBoxThing.TextScaled = true
+		CreateTextBoxThing.TextSize = 5
+		CreateTextBoxThing.Name = nameB
+		CreateTextBoxThing.TextColor3 = Color3.fromRGB(200, 100, 100)
+		CreateTextBoxThing.LayoutOrder = OrderNum
+
+		local ScriptBoxMainRoundUI = Instance.new("UICorner", CreateTextBoxThing)
+		ScriptBoxMainRoundUI.CornerRadius = UDim.new(0, 10)
+
+		local temp = Instance.new("IntValue", CreateTextBoxThing)
+		temp.Name =  "TextBoxUniqueIdentifier"
+		temp.Value = UniqueIdentifier
+		return CreateTextBoxThing
+		--_ORGANIZEUI() --.FocusLost:Connect(function(enter)
+
+	end
+
 
 	function CreateButton(nameB, OrderNum, Keypress, Function)
 		
@@ -214,7 +241,7 @@ function __CREATELIB__(nameLib, AnimStyle, TpPlayer)
 			PanelButtonKeypressValue.Value = Keypress
 		end
 		return CreatePanelButton
-
+		--_ORGANIZEUI()
 	end
 
 	function CreateLabel(nameB, OrderNum)
@@ -284,6 +311,19 @@ function __CREATELIB__(nameLib, AnimStyle, TpPlayer)
 		end
 	end
 
+	function _GetTextBoxValue(UniqueIdentifier)
+		
+		for i, v in pairs(game.CoreGui.ExploitGuiMenu:GetDescendants()) do
+			
+			if v:IsA("IntValue") and v.Name == "TextBoxUniqueIdentifier" and v.Value == UniqueIdentifier then
+				local BoxValue = v.Parent.Text
+				return BoxValue
+			end
+
+		end
+
+	end
+
 	CreateAlert("Current Version Running: " .. VERSION, 99999, 3, 0)
 		
 	local function TpPlayer()
@@ -311,7 +351,7 @@ function __CREATELIB__(nameLib, AnimStyle, TpPlayer)
 		end)
 	end
 
-	if TpPlayer then
+	if TpPlayerButton == true then
 		TpPlayer()
 	end
 
@@ -319,7 +359,10 @@ function __CREATELIB__(nameLib, AnimStyle, TpPlayer)
 		_ClearCanvas()
 		
 		CreateLabel("Library Created By: DigitalDemon", 1)
-		CreateLabel("If bugs are found, Message me on discord! DigitalDemon#1099", 1)
+		CreateLabel("If bugs are found, Message me on discord! DigitalDemon#1099", 2)
+
+		CreateLabel("INFORMATION:", 3)
+		CreateLabel(CreditInfo, 4)
 
 		_ORGANIZEUI()
 	end)
@@ -361,3 +404,5 @@ function __CREATELIB__(nameLib, AnimStyle, TpPlayer)
 		
 	--_INITIALIZEUI() -- AT THE END OF UI. DOES NOT NEED TO BE AT THE END OF ALL SCRIPTS
 end
+
+--/////////////////////////////////////--
