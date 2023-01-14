@@ -235,6 +235,6 @@ Code is open for anyone to download and edit, No need to add credits. (Although 
 Code will also be updated more, always check the version to see if anything new is added!
 
 
-DOCUMENTATION VERSION: 1.0.0
+DOCUMENTATION VERSION: 1.2.1
 DOCUMENTATION CREATED: 2023-01-12
 DOCUMENTATION LAST EDITED: 2023-01-14
