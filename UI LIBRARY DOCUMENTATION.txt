@@ -105,7 +105,56 @@ EXAMPLE:
 |	CreateAlert("Warning: Players can see you", 0, 3.152, 0.257)	|
 |	CreateAlert("Priority Alert: Script is running", 12, 5, 2)	|
 
---------------------------------------------------------------
+-----------------------------------------------------------------------------
+
+|	_GetTextBoxValue(UniqueIdentifier)	|
+
+--UniqueIdentifier--
+The ID of a textbox.
+Gets value of that textbox using the UniqueIdentifier.
+
+
+EXAMPLE:
+
+|	_GetTextBoxValue(UniqueIdentifier) -- 1 is the textbox value	|
+
+-----------------------------------------------------------------------------
+
+|	CreateTextBox(nameB, OrderNum, UniqueIdentifier)	|
+
+Creates a Textbox that the user can input values into. This is Best paired with "GetTextBoxValue".
+To run the Textbox function, You must connect it with ".FocusLost:Connect(function(enter) end)" statement.
+
+Example:
+|	CreateTextBox("Put Code here", 11, 6).FocusLost:Connect(function(enter) end)    	|
+
+--nameB (String)--
+the name/text of the button
+
+--OrderNum (Int Number)--
+The ordering of which the buttons are. (0-inf, lowest to highest)
+
+--UniqueIdentifier(Int Number)--
+This is used to find the value of textbox. 
+ESSENTIAL.
+To get the value of textbox, You must pair this with "_GetTextBoxValue(INSERT UNIQUE IDENTIFIER HERE)".
+
+
+EXAMPLE:
+
+|	CreateTextBox("Type Number", 1, 1)	|
+
+
+EXAMPLE CODE:
+
+CreateTextBox("Put numbers only here", 10, 1).FocusLost:Connect(function(enter) -- Identifier to get value from code here is he 1 at the end.
+		
+	local BoxValue = _GetTextBoxValue(1) --Calling Identifier (which is the "1") and storing it inside a local variable.
+	CreateAlert(BoxValue, 1, 2, 1) -- creates an alert
+
+end)
+
+-----------------------------------------------------------------------------
 
 ///////////////////////IMPORTANT\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
@@ -125,6 +174,7 @@ CreateButton(v.DisplayName .. " (".. v.Name .. ").", 2, "").MouseButton2Click:Co
 TO CREATE PANEL BUTTONS WITH ITEMS IN THEM, YOU MUST INSERT ALL ITEMS INSIDE THE FUNCTION.
 TO CLEAR ALL OTHER EXISTING ITEMS FROM SELECTION BOX, YOU MUST RUN THE FUNCTIONS "_ClearCanvas()" AT THE START OF FUNCTION
 AT THE LAST LINE OF THE FUNCTION, YOU MUST CALL "_ORGANIZEUI()" TO ORDER YOUR UI BY THE "OrderNum"
+IF YOU WANT TO ADD SOME CREDIT INFORMATION, USE |CreditInfo = "INSERT INFO HERE"| at the start of your script. WILL SHOW UP IN CREDITS SECTION
 
 EXAMPLE FROM SCRIPT:
 
@@ -187,4 +237,4 @@ Code will also be updated more, always check the version to see if anything new 
 
 DOCUMENTATION VERSION: 1.0.0
 DOCUMENTATION CREATED: 2023-01-12
-DOCUMENTATION LAST EDITED: 2023-01-12
+DOCUMENTATION LAST EDITED: 2023-01-14
