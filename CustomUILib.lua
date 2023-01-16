@@ -4,9 +4,9 @@ CreditInfo = "Person Has not given any information."
 
 function __CREATELIB__(nameLib, AnimStyle, TpPlayerButton)
 
-	if game.CoreGui:FindFirstChild("ExploitGuiMenu") ~= nil then
+	if game.CoreGui:FindFirstChild("CoolLib") ~= nil then
 
-		game.CoreGui['ExploitGuiMenu']:Destroy()
+		game.CoreGui['CoolLib']:Destroy()
 
 	end
 
@@ -26,7 +26,7 @@ function __CREATELIB__(nameLib, AnimStyle, TpPlayerButton)
 	------------------------------------------------------
 
 	local MainScreen = Instance.new("ScreenGui", game.CoreGui)
-	MainScreen.Name = "ExploitGuiMenu"
+	MainScreen.Name = "CoolLib"
 
 	local Main = Instance.new("Frame", MainScreen)
 	Main.Name = nameLib
@@ -167,7 +167,7 @@ function __CREATELIB__(nameLib, AnimStyle, TpPlayerButton)
 		local tween = tweenService:Create(MainUIScale, ShrinkAnim, {Scale = 0} )
 		tween:Play()
 		wait(1.5)
-		game.CoreGui.ExploitGuiMenu:Destroy()
+		game.CoreGui.CoolLib:Destroy()
 	end)
 
 	--////////CREATE UI HERE/////////////////--
@@ -313,7 +313,7 @@ function __CREATELIB__(nameLib, AnimStyle, TpPlayerButton)
 
 	function _GetTextBoxValue(UniqueIdentifier)
 		
-		for i, v in pairs(game.CoreGui.ExploitGuiMenu:GetDescendants()) do
+		for i, v in pairs(game.CoreGui.CoolLib:GetDescendants()) do
 			
 			if v:IsA("IntValue") and v.Name == "TextBoxUniqueIdentifier" and v.Value == UniqueIdentifier then
 				local BoxValue = v.Parent.Text
@@ -386,10 +386,10 @@ function __CREATELIB__(nameLib, AnimStyle, TpPlayerButton)
 			if input.KeyCode == Enum.KeyCode.RightAlt then
 				if _VISIBLE then
 					_VISIBLE = false
-					game.CoreGui:FindFirstChild("ExploitGuiMenu").Enabled = false
+					game.CoreGui:FindFirstChild("CoolLib").Enabled = false
 				else
 					_VISIBLE = true
-					game.CoreGui:FindFirstChild("ExploitGuiMenu").Enabled = true
+					game.CoreGui:FindFirstChild("CoolLib").Enabled = true
 				end
 			end
 		end
