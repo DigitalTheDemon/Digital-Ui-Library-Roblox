@@ -1,4 +1,4 @@
-VERSION = "1.2.3"
+VERSION = "1.2.4"
 CreditInfo = "Person Has not given any information."
 
 
@@ -57,7 +57,7 @@ function __CREATELIB__(nameLib, AnimStyle, TpPlayerButton)
 
 	local SideSelectionPanelMain = Instance.new("ScrollingFrame", Main)
 	SideSelectionPanelMain.Size = UDim2.new(0.635, 0, 0.75, 0)
-	SideSelectionPanelMain.BackgroundColor3 = Color3.fromRGB(54, 70, 81)
+	SideSelectionPanelMain.BackgroundColor3 = Color3.fromRGB(57, 61, 66)
 	SideSelectionPanelMain.ScrollBarThickness = 5
 	SideSelectionPanelMain.CanvasSize = UDim2.new(0, 0, 0, 0)
 	SideSelectionPanelMain.Position = UDim2.new(0.365, 0, 0.177, 0)
@@ -68,7 +68,7 @@ function __CREATELIB__(nameLib, AnimStyle, TpPlayerButton)
 	local ExitProgramButton = Instance.new("TextButton", Main)
 	ExitProgramButton.Size = UDim2.new(0.098, 0, 0.177, 0)
 	ExitProgramButton.Position = UDim2.new(0, 0, 0, 0)
-	ExitProgramButton.BackgroundColor3 = Color3.fromRGB(211, 66, 61)
+	ExitProgramButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
 	ExitProgramButton.Text = "X"
 	ExitProgramButton.TextScaled = true
 	ExitProgramButton.TextSize = 5
@@ -177,12 +177,12 @@ function __CREATELIB__(nameLib, AnimStyle, TpPlayerButton)
 		local CreateSidePanelButton = Instance.new("TextButton", SidePanelSelectorMain)
 		CreateSidePanelButton.Size = UDim2.new(0.88, 0, 0.165, 0)
 		--CreateSidePanelButton.Position = UDim2.new(0, 0, 0, 0)
-		CreateSidePanelButton.BackgroundColor3 = Color3.fromRGB(178, 48, 40)
+		CreateSidePanelButton.BackgroundColor3 = Color3.fromRGB(54, 70, 81)
 		CreateSidePanelButton.Text = nameB
 		CreateSidePanelButton.TextScaled = true
 		CreateSidePanelButton.TextSize = 5
 		CreateSidePanelButton.Name = nameB
-		CreateSidePanelButton.TextColor3 = Color3.fromRGB(49, 49, 49)
+		CreateSidePanelButton.TextColor3 = Color3.fromRGB(178, 48, 40)
 		CreateSidePanelButton.LayoutOrder = OrderNum
 
 		local ScriptLabelMainRoundUI = Instance.new("UICorner", CreateSidePanelButton)
@@ -196,12 +196,12 @@ function __CREATELIB__(nameLib, AnimStyle, TpPlayerButton)
 		local CreateTextBoxThing = Instance.new("TextBox", SideSelectionPanelMain)
 		CreateTextBoxThing.Size = UDim2.new(0.88, 0, 0.165, 0)
 		CreateTextBoxThing.Position = UDim2.new(0.062, 0, 0, 0)
-		CreateTextBoxThing.BackgroundColor3 = Color3.fromRGB(178, 48, 40)
+		CreateTextBoxThing.BackgroundColor3 = Color3.fromRGB(57, 61, 66)
 		CreateTextBoxThing.Text = nameB
 		CreateTextBoxThing.TextScaled = true
 		CreateTextBoxThing.TextSize = 5
 		CreateTextBoxThing.Name = nameB
-		CreateTextBoxThing.TextColor3 = Color3.fromRGB(49, 49, 49)
+		CreateTextBoxThing.TextColor3 = Color3.fromRGB(153, 23, 13)
 		CreateTextBoxThing.LayoutOrder = OrderNum
 
 		local ScriptBoxMainRoundUI = Instance.new("UICorner", CreateTextBoxThing)
@@ -221,12 +221,12 @@ function __CREATELIB__(nameLib, AnimStyle, TpPlayerButton)
 		local CreatePanelButton = Instance.new("TextButton", SideSelectionPanelMain)
 		CreatePanelButton.Size = UDim2.new(0.88, 0, 0.165, 0)
 		CreatePanelButton.Position = UDim2.new(0.062, 0, 0, 0)
-		CreatePanelButton.BackgroundColor3 = Color3.fromRGB(178, 48, 40)
+		CreatePanelButton.BackgroundColor3 = Color3.fromRGB(57, 61, 66)
 		CreatePanelButton.Text = nameB
 		CreatePanelButton.TextScaled = true
 		CreatePanelButton.TextSize = 5
 		CreatePanelButton.Name = nameB
-		CreatePanelButton.TextColor3 = Color3.fromRGB(49, 49, 49)
+		CreatePanelButton.TextColor3 = Color3.fromRGB(153, 23, 13)
 		CreatePanelButton.LayoutOrder = OrderNum
 
 		local ScriptLabelMainRoundUI = Instance.new("UICorner", CreatePanelButton)
