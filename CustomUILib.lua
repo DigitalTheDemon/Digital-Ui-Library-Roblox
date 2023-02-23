@@ -31,7 +31,7 @@ function __CREATELIB__(nameLib, AnimStyle, TpPlayerButton)
 	local Main = Instance.new("Frame", MainScreen)
 	Main.Name = nameLib
 	Main.Size = UDim2.new(0.001, 0, 0.001, 0)
-	Main.BackgroundColor3 = Color3.fromRGB(57, 61, 66)
+	Main.BackgroundColor3 = Color3.fromRGB(49, 49, 49)
 	Main.Position = UDim2.new(0.01, 0, 0.763, 0)
 	Main.ClipsDescendants = true
 
@@ -47,7 +47,7 @@ function __CREATELIB__(nameLib, AnimStyle, TpPlayerButton)
 
 	local SidePanelSelectorMain = Instance.new("ScrollingFrame", Main)
 	SidePanelSelectorMain.Size = UDim2.new(0.365, 0, 0.75, 0)
-	SidePanelSelectorMain.BackgroundColor3 = Color3.fromRGB(108, 37, 37)
+	SidePanelSelectorMain.BackgroundColor3 = Color3.fromRGB(57, 61, 66)
 	SidePanelSelectorMain.ScrollBarThickness = 5
 	SidePanelSelectorMain.CanvasSize = UDim2.new(0, 0, 0, 0)
 	SidePanelSelectorMain.Position = UDim2.new(0, 0, 0.177, 0)
@@ -57,7 +57,7 @@ function __CREATELIB__(nameLib, AnimStyle, TpPlayerButton)
 
 	local SideSelectionPanelMain = Instance.new("ScrollingFrame", Main)
 	SideSelectionPanelMain.Size = UDim2.new(0.635, 0, 0.75, 0)
-	SideSelectionPanelMain.BackgroundColor3 = Color3.fromRGB(57, 61, 66)
+	SideSelectionPanelMain.BackgroundColor3 = Color3.fromRGB(54, 70, 81)
 	SideSelectionPanelMain.ScrollBarThickness = 5
 	SideSelectionPanelMain.CanvasSize = UDim2.new(0, 0, 0, 0)
 	SideSelectionPanelMain.Position = UDim2.new(0.365, 0, 0.177, 0)
