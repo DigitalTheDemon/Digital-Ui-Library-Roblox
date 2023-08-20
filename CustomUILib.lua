@@ -36,6 +36,7 @@ function __CREATELIB__(nameLib, AnimStyle, TpPlayerButton)
 	Main.ClipsDescendants = true
 
 	local ScriptLabelMain = Instance.new("TextLabel", Main)
+	ScriptLabelMain.Active = True
 	ScriptLabelMain.Size = UDim2.new(0.9, 0, 0.177, 0)
 	ScriptLabelMain.BackgroundColor3 = Color3.fromRGB(57, 61, 66)
 	ScriptLabelMain.Text = nameLib
