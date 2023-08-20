@@ -1,6 +1,24 @@
 VERSION = "1.3.5"
 CreditInfo = "Person Has not given any information."
 
+local ColorsDarkSentinalTheme = {
+	ColorPrimary100 = Color3.fromHex("#f02b2b"),
+	ColorPrimary200 = Color3.fromHex("#f64f40"),
+	ColorPrimary300 = Color3.fromHex("#fc6956"),
+	ColorPrimary400 = Color3.fromHex("#ff816d"),
+	ColorPrimary500 = Color3.fromHex("#ff9784"),
+	ColorPrimary600 = Color3.fromHex("#ffad9b"),
+	
+	--//////////////////////////////////////////--
+	
+	ColorSurface100 = Color3.fromHex("#121212"),
+	ColorSurface200 = Color3.fromHex("#282828"),
+	ColorSurface300 = Color3.fromHex("#3f3f3f"),
+	ColorSurface400 = Color3.fromHex("#575757"),
+	ColorSurface500 = Color3.fromHex("#717171"),
+	ColorSurface600 = Color3.fromHex("#8b8b8b"),
+	-- Add more color variables here
+}
 
 function __CREATELIB__(nameLib, AnimStyle, TpPlayerButton)
 
